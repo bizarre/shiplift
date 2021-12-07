@@ -820,6 +820,16 @@ impl ContainerOptionsBuilder {
         self
     }
 
+        /// Whether to attach to `stdin`.
+    pub fn open_stdin(
+        &mut self,
+        open: bool,
+    ) -> &mut Self {
+        self.params.insert("OpenStdin", json!(open));
+        self
+    }
+  
+
     /// Whether to attach to `stdin`.
     pub fn attach_stdin(
         &mut self,
